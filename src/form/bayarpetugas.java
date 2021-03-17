@@ -35,8 +35,8 @@ public class bayarpetugas extends javax.swing.JFrame {
     }
     
     protected void kosong(){
-        txtidkea.setText("");
-        txtnokk.setText("");
+        txtidpem.setText("");
+        txtnoktp.setText("");
         txtnama.setText("");
         txtalamat.setText("");
         txtbayar.setText("");
@@ -44,12 +44,12 @@ public class bayarpetugas extends javax.swing.JFrame {
     
     protected void autonumber(){
         try{
-            String sql = "SELECT id_pkeamanan FROM keamanan order by id_pkeamanan asc";
+            String sql = "SELECT id_bayar FROM bayarpetugas order by id_bayar asc";
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(sql);
-            txtidkea.setText("KEA0001");
+            txtidpem.setText("P0001");
             while (rs.next()){
-                String id_notapem = rs.getString("id_pkeamanan").substring(3);
+                String id_notapem = rs.getString("id_bayar").substring(1);
                 int AN = Integer.parseInt(id_notapem) + 1;
                 String Nol = "";
                 
@@ -62,17 +62,17 @@ public class bayarpetugas extends javax.swing.JFrame {
                 else if (AN<10000)
                 {Nol = "";}
                 
-                txtidkea.setText("KEA" + Nol + AN);
+                txtidpem.setText("P" + Nol + AN);
             }
         }catch (Exception e){
             JOptionPane.showMessageDialog(null, "Auto Number Gagal" +e);
         }
     }
     
-    public void itemTerpilihWarga(){
+    public void itemTerpilihPetugas(){
         popup.popPetugas pp = new popup.popPetugas();
         pp.bp = this;
-        txtnokk.setText(ktp);
+        txtnoktp.setText(ktp);
         txtnama.setText(nama);
         txtalamat.setText(alamat);
     }
@@ -93,9 +93,9 @@ public class bayarpetugas extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        txtidkea = new javax.swing.JTextField();
+        txtidpem = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        txtnokk = new javax.swing.JTextField();
+        txtnoktp = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -116,18 +116,18 @@ public class bayarpetugas extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Bayar Keamanan");
 
-        txtidkea.setEditable(false);
+        txtidpem.setEditable(false);
 
         jLabel2.setText("No.Pembayaran");
 
-        txtnokk.setEditable(false);
+        txtnoktp.setEditable(false);
 
-        jLabel3.setText("No. Kartu Keluarga");
+        jLabel3.setText("No. KTP");
 
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel4.setText("Tanggal");
 
-        jLabel5.setText("Nama Kepala Keluarga");
+        jLabel5.setText("Nama Petugas");
 
         txtnama.setEditable(false);
 
@@ -177,12 +177,12 @@ public class bayarpetugas extends javax.swing.JFrame {
                     .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 545, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtidkea, javax.swing.GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE)
+                            .addComponent(txtidpem, javax.swing.GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE)
                             .addComponent(jLabel3)
                             .addComponent(jLabel5)
                             .addComponent(jLabel6)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(txtnokk)
+                                .addComponent(txtnoktp)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jButton1))
                             .addComponent(txtnama, javax.swing.GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE)
@@ -211,7 +211,7 @@ public class bayarpetugas extends javax.swing.JFrame {
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtidkea, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtidpem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jtanggal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -219,7 +219,7 @@ public class bayarpetugas extends javax.swing.JFrame {
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtnokk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtnoktp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel5)
@@ -256,11 +256,11 @@ public class bayarpetugas extends javax.swing.JFrame {
         // TODO add your handling code here:
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         String fd = sdf.format(jtanggal.getValue());
-        String sql = "insert into keamanan values (?,?,?)";
+        String sql = "insert into bayarpetugas values (?,?,?)";
         try{
             PreparedStatement stat = conn.prepareStatement(sql);
-            stat.setString(1,txtidkea.getText());
-            stat.setString(2,txtnokk.getText());
+            stat.setString(1,txtidpem.getText());
+            stat.setString(2,txtnoktp.getText());
             stat.setString(3,fd);
 
             stat.executeUpdate();
@@ -332,8 +332,8 @@ public class bayarpetugas extends javax.swing.JFrame {
     private javax.swing.JSpinner jtanggal;
     private javax.swing.JTextArea txtalamat;
     private javax.swing.JTextField txtbayar;
-    private javax.swing.JTextField txtidkea;
+    private javax.swing.JTextField txtidpem;
     private javax.swing.JTextField txtnama;
-    private javax.swing.JTextField txtnokk;
+    private javax.swing.JTextField txtnoktp;
     // End of variables declaration//GEN-END:variables
 }

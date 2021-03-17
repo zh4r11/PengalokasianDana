@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isFloatColumnFooter="true" isIgnorePagination="true" uuid="d193fe73-8079-4695-a55a-3fe156dce3e6">
+	<property name="ireport.zoom" value="1.1000000000000005"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     petugas.`no_ktp` AS petugas_no_ktp,
+     petugas.`nama` AS petugas_nama,
+     petugas.`telp` AS petugas_telp,
+     petugas.`alamat` AS petugas_alamat,
+     petugas.`tugas` AS petugas_tugas
+FROM
+     `petugas` petugas]]>
+	</queryString>
+	<field name="petugas_no_ktp" class="java.lang.String"/>
+	<field name="petugas_nama" class="java.lang.String"/>
+	<field name="petugas_telp" class="java.lang.String"/>
+	<field name="petugas_alamat" class="java.lang.String"/>
+	<field name="petugas_tugas" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="53" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="53" uuid="5aad7001-1d76-46d8-a71e-86d9cdcafe30"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="30" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Laporan Data Petugas]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="111" height="20" uuid="0ac760b9-a1b5-480a-976f-cda5bd154300"/>
+				<text><![CDATA[petugas_no_ktp]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="111" y="0" width="111" height="20" uuid="134be002-2a80-47e8-a91e-d74ae701399f"/>
+				<text><![CDATA[petugas_nama]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="222" y="0" width="111" height="20" uuid="0573c7a4-0cbe-4214-87c4-2162e61be5b5"/>
+				<text><![CDATA[petugas_telp]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="333" y="0" width="111" height="20" uuid="886d801c-37c6-4bdd-978b-c5b3f49c304f"/>
+				<text><![CDATA[petugas_alamat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="444" y="0" width="111" height="20" uuid="f87e7716-1ae1-46d1-82be-7c721e7e937a"/>
+				<text><![CDATA[petugas_tugas]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="111" height="20" uuid="958048aa-27da-49b6-88d6-f664b926e03a"/>
+				<textFieldExpression><![CDATA[$F{petugas_no_ktp}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="111" y="0" width="111" height="20" uuid="af89bf86-6ab2-45a1-b236-80b5704aeaf0"/>
+				<textFieldExpression><![CDATA[$F{petugas_nama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="222" y="0" width="111" height="20" uuid="74ca3c9c-bbd7-473b-a604-94aef63582fe"/>
+				<textFieldExpression><![CDATA[$F{petugas_telp}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="333" y="0" width="111" height="20" uuid="58d76275-16d0-4e84-a8c7-e7d41c693519"/>
+				<textFieldExpression><![CDATA[$F{petugas_alamat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="444" y="0" width="111" height="20" uuid="82186629-1992-41f8-bef6-6f1042a40c3b"/>
+				<textFieldExpression><![CDATA[$F{petugas_tugas}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

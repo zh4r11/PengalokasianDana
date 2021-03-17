@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isFloatColumnFooter="true" isIgnorePagination="true" uuid="d193fe73-8079-4695-a55a-3fe156dce3e6">
+	<property name="ireport.zoom" value="1.6105100000000014"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="dari" class="java.lang.String"/>
+	<parameter name="sampai" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     warga.`nama_kk` AS warga_nama_kk,
+     warga.`alamat` AS warga_alamat,
+     keamanan.`id_pkeamanan` AS keamanan_id_pkeamanan,
+     keamanan.`tanggal` AS keamanan_tanggal
+FROM
+     `warga` warga INNER JOIN `keamanan` keamanan ON warga.`no_kk` = keamanan.`no_kk`
+WHERE
+     keamanan.`tanggal` BETWEEN $P{dari} AND $P{sampai}]]>
+	</queryString>
+	<field name="warga_nama_kk" class="java.lang.String"/>
+	<field name="warga_alamat" class="java.lang.String"/>
+	<field name="keamanan_id_pkeamanan" class="java.lang.String"/>
+	<field name="keamanan_tanggal" class="java.sql.Date"/>
+	<variable name="bayar" class="java.lang.Integer">
+		<variableExpression><![CDATA[10000]]></variableExpression>
+	</variable>
+	<variable name="total" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$V{bayar}]]></variableExpression>
+	</variable>
+	<variable name="tdari" class="java.lang.String">
+		<variableExpression><![CDATA[$P{dari}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="53" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="53" uuid="5aad7001-1d76-46d8-a71e-86d9cdcafe30"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="30" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Laporan Data Iuran Keamanan]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="0" y="0" width="255" height="20" uuid="e101da3a-9718-4cfa-bfe2-18eb6fa8d7da"/>
+				<textElement markup="none"/>
+				<textFieldExpression><![CDATA["Periode Tanggal "+$P{dari}+" sampai "+$P{sampai}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="71" height="20" uuid="54684b31-8bf5-49f1-ba8c-f3ba5ee3222c"/>
+				<text><![CDATA[keamanan_id_pkebersihan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="171" y="0" width="105" height="20" uuid="e2738653-591a-46db-9781-6807c4640321"/>
+				<text><![CDATA[warga_nama_kk]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="276" y="0" width="138" height="20" uuid="9448c5d1-16c2-4a97-9c60-d46b8dc3d402"/>
+				<text><![CDATA[warga_alamat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="414" y="0" width="138" height="20" uuid="61e68c56-2805-43e5-8e6f-26194508c030"/>
+				<text><![CDATA[Bayar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="71" y="0" width="100" height="20" uuid="9a47a3fc-76fb-4da8-a917-ab14b2d11d9f"/>
+				<text><![CDATA[keamanan_tanggal]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="71" height="20" uuid="c37d828d-a6f0-46c7-ab62-56d2c058a8d0"/>
+				<textFieldExpression><![CDATA[$F{keamanan_id_pkeamanan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="171" y="0" width="105" height="20" uuid="6e497858-fd42-4c74-ae80-ace7c40ac06e"/>
+				<textFieldExpression><![CDATA[$F{warga_nama_kk}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="276" y="0" width="138" height="20" uuid="e44fa209-d341-44ff-83d3-406288ea6d95"/>
+				<textFieldExpression><![CDATA[$F{warga_alamat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="414" y="0" width="138" height="20" uuid="e80e69a6-7a81-4b67-bf17-25b97fe72df0"/>
+				<textElement markup="none"/>
+				<textFieldExpression><![CDATA[$V{bayar}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="71" y="0" width="100" height="20" uuid="b3fc0f01-d7bb-4bfc-bf3e-34e4e13cf9f4"/>
+				<textFieldExpression><![CDATA[$F{keamanan_tanggal}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="414" y="0" width="138" height="20" uuid="3430e132-5fda-42c9-a357-dc613179cd81"/>
+				<textFieldExpression><![CDATA[$V{total}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="276" y="0" width="138" height="20" uuid="508070ef-c39a-47d1-96e7-20f379261861"/>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -29,12 +29,12 @@
                   <Component id="jLabel1" alignment="1" pref="545" max="32767" attributes="0"/>
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="txtidkea" alignment="0" pref="229" max="32767" attributes="0"/>
+                          <Component id="txtidpem" alignment="0" pref="229" max="32767" attributes="0"/>
                           <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="txtnokk" max="32767" attributes="0"/>
+                              <Component id="txtnoktp" max="32767" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -72,7 +72,7 @@
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="txtidkea" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtidpem" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jtanggal" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -81,7 +81,7 @@
                       <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="txtnokk" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtnoktp" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -122,7 +122,7 @@
         <Property name="text" type="java.lang.String" value="Bayar Keamanan"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtidkea">
+    <Component class="javax.swing.JTextField" name="txtidpem">
       <Properties>
         <Property name="editable" type="boolean" value="false"/>
       </Properties>
@@ -132,14 +132,14 @@
         <Property name="text" type="java.lang.String" value="No.Pembayaran"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtnokk">
+    <Component class="javax.swing.JTextField" name="txtnoktp">
       <Properties>
         <Property name="editable" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
-        <Property name="text" type="java.lang.String" value="No. Kartu Keluarga"/>
+        <Property name="text" type="java.lang.String" value="No. KTP"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
@@ -150,7 +150,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Nama Kepala Keluarga"/>
+        <Property name="text" type="java.lang.String" value="Nama Petugas"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtnama">

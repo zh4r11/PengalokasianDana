@@ -28,8 +28,8 @@ public class popPetugas extends javax.swing.JFrame {
         Statement stat = conn.createStatement();
         ResultSet hasil = stat.executeQuery(sql);
         while (hasil.next()){
-            String nomor = hasil.getString("no_kk");
-            String nama = hasil.getString("nama_kk");
+            String nomor = hasil.getString("no_ktp");
+            String nama = hasil.getString("nama");
             String telp = hasil.getString("telp");
             String alamat = hasil.getString("alamat");
             String tugas = hasil.getString("tugas");
