@@ -22,13 +22,24 @@ FROM
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="53" splitType="Stretch">
+		<band height="86" splitType="Stretch">
+			<image>
+				<reportElement x="489" y="0" width="95" height="86" uuid="b411bc47-dd27-4bf7-820c-1231523a5de2"/>
+				<imageExpression><![CDATA["C:\\Users\\Azhari\\Documents\\NetBeansProjects\\PengalokasianDana\\src\\logo\\LOGO KABUPATEN PURWAKARTA.png"]]></imageExpression>
+			</image>
 			<staticText>
-				<reportElement x="0" y="0" width="555" height="53" uuid="5aad7001-1d76-46d8-a71e-86d9cdcafe30"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="30" isBold="true"/>
+				<reportElement x="0" y="2" width="489" height="37" uuid="d03879f4-cc29-4edb-9ea6-3b3b2cb3ddd2"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="26" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Laporan Data Petugas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="39" width="489" height="37" uuid="9a9d9227-4ec1-4fdd-ab37-75f30271d47d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RT 04 RW 01]]></text>
 			</staticText>
 		</band>
 	</title>
@@ -39,23 +50,23 @@ FROM
 		<band height="20" splitType="Stretch">
 			<staticText>
 				<reportElement x="0" y="0" width="111" height="20" uuid="0ac760b9-a1b5-480a-976f-cda5bd154300"/>
-				<text><![CDATA[petugas_no_ktp]]></text>
+				<text><![CDATA[No. KTP]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="111" y="0" width="111" height="20" uuid="134be002-2a80-47e8-a91e-d74ae701399f"/>
-				<text><![CDATA[petugas_nama]]></text>
+				<text><![CDATA[Nama]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="222" y="0" width="111" height="20" uuid="0573c7a4-0cbe-4214-87c4-2162e61be5b5"/>
-				<text><![CDATA[petugas_telp]]></text>
+				<reportElement x="222" y="0" width="92" height="20" uuid="0573c7a4-0cbe-4214-87c4-2162e61be5b5"/>
+				<text><![CDATA[Telepon]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="333" y="0" width="111" height="20" uuid="886d801c-37c6-4bdd-978b-c5b3f49c304f"/>
-				<text><![CDATA[petugas_alamat]]></text>
+				<reportElement x="314" y="0" width="130" height="20" uuid="886d801c-37c6-4bdd-978b-c5b3f49c304f"/>
+				<text><![CDATA[Alamat]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="444" y="0" width="111" height="20" uuid="f87e7716-1ae1-46d1-82be-7c721e7e937a"/>
-				<text><![CDATA[petugas_tugas]]></text>
+				<text><![CDATA[Tugas]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
@@ -70,11 +81,11 @@ FROM
 				<textFieldExpression><![CDATA[$F{petugas_nama}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="222" y="0" width="111" height="20" uuid="74ca3c9c-bbd7-473b-a604-94aef63582fe"/>
+				<reportElement x="222" y="0" width="92" height="20" uuid="74ca3c9c-bbd7-473b-a604-94aef63582fe"/>
 				<textFieldExpression><![CDATA[$F{petugas_telp}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="333" y="0" width="111" height="20" uuid="58d76275-16d0-4e84-a8c7-e7d41c693519"/>
+				<reportElement x="314" y="0" width="130" height="20" uuid="58d76275-16d0-4e84-a8c7-e7d41c693519"/>
 				<textFieldExpression><![CDATA[$F{petugas_alamat}]]></textFieldExpression>
 			</textField>
 			<textField>
@@ -87,7 +98,23 @@ FROM
 		<band height="45" splitType="Stretch"/>
 	</columnFooter>
 	<pageFooter>
-		<band height="54" splitType="Stretch"/>
+		<band height="100" splitType="Stretch">
+			<staticText>
+				<reportElement x="378" y="20" width="177" height="20" uuid="f596846d-7938-45b6-bd21-db6b3ea34b5e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Mengetahui Ketua RW 07]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="378" y="80" width="177" height="20" uuid="631d247a-0a55-4534-a5d8-bfa5e6b6a472"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Subandi]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="378" y="0" width="177" height="20" uuid="8fcc9281-e844-42a0-9015-2d13bc18ad2e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["Purwakarta, "+new SimpleDateFormat("EEEE, dd MMMMM yyyy",new java.util.Locale("id")).format(new java.util.Date())]]></textFieldExpression>
+			</textField>
+		</band>
 	</pageFooter>
 	<summary>
 		<band height="42" splitType="Stretch"/>
