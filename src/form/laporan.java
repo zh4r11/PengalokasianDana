@@ -61,6 +61,7 @@ public class laporan extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         jMenuBar2 = new javax.swing.JMenuBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -115,6 +116,13 @@ public class laporan extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel3.setText("Sistem Pembayaran dan Pengalokasian");
+
+        jButton1.setText("Keluar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         setJMenuBar(jMenuBar2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -122,18 +130,24 @@ public class laporan extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(keamanan, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(warga, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(petugas, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(kebersihan, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bayarpetugas))
-                .addGap(48, 48, 48)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(73, 73, 73)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(keamanan, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(warga, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(petugas, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(kebersihan, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bayarpetugas))
+                        .addGap(48, 48, 48)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(73, 73, 73))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(164, 164, 164)))
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(11, Short.MAX_VALUE))
         );
@@ -152,7 +166,8 @@ public class laporan extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(bayarpetugas))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(119, 119, 119)
+                        .addComponent(jButton1)
+                        .addGap(96, 96, 96)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(keamanan))
@@ -166,16 +181,30 @@ public class laporan extends javax.swing.JFrame {
 
     private void bayarpetugasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bayarpetugasActionPerformed
         // TODO add your handling code here:
-        bayarpetugas tl = new bayarpetugas();
-        tl.show();
-        this.dispose();
+        try {
+//            HashMap hash = new HashMap();
+
+            InputStream is = getClass().getResourceAsStream("/report/reportBayarPetugas.jrxml");
+            JasperReport jasperReport = JasperCompileManager.compileReport(is);
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, conn);
+            JasperViewer.viewReport(jasperPrint, false);
+        }catch (JRException e) {
+            JOptionPane.showMessageDialog(null, "Error " + e);
+        }
     }//GEN-LAST:event_bayarpetugasActionPerformed
 
     private void kebersihanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kebersihanActionPerformed
         // TODO add your handling code here:
-        kebersihan cl = new kebersihan();
-        cl.show();
-        this.dispose();
+        try {
+//            HashMap hash = new HashMap();
+
+            InputStream is = getClass().getResourceAsStream("/report/reportKebersihan.jrxml");
+            JasperReport jasperReport = JasperCompileManager.compileReport(is);
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, conn);
+            JasperViewer.viewReport(jasperPrint, false);
+        }catch (JRException e) {
+            JOptionPane.showMessageDialog(null, "Error " + e);
+        }
     }//GEN-LAST:event_kebersihanActionPerformed
 
     private void wargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_wargaActionPerformed
@@ -208,9 +237,24 @@ public class laporan extends javax.swing.JFrame {
 
     private void keamananActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_keamananActionPerformed
         // TODO add your handling code here:
-        keamanan rs = new keamanan();
-        rs.show();
+        try {
+//            HashMap hash = new HashMap();
+
+            InputStream is = getClass().getResourceAsStream("/report/reportKeamanan.jrxml");
+            JasperReport jasperReport = JasperCompileManager.compileReport(is);
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, conn);
+            JasperViewer.viewReport(jasperPrint, false);
+        }catch (JRException e) {
+            JOptionPane.showMessageDialog(null, "Error " + e);
+        }
     }//GEN-LAST:event_keamananActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        menuUtama mu = new menuUtama();
+        mu.show();
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -264,6 +308,7 @@ public class laporan extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bayarpetugas;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
