@@ -193,12 +193,14 @@ public class menuUtama extends javax.swing.JFrame {
         // TODO add your handling code here:
         petugas nj = new petugas();
         nj.show();
+        this.dispose();
     }//GEN-LAST:event_bPekerjaanActionPerformed
 
     private void bJadwalUlangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bJadwalUlangActionPerformed
         // TODO add your handling code here:
         keamanan rs = new keamanan();
         rs.show();
+        this.dispose();
     }//GEN-LAST:event_bJadwalUlangActionPerformed
 
     private void bPembayaranActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bPembayaranActionPerformed

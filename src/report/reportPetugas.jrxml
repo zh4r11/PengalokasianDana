@@ -50,22 +50,57 @@ FROM
 		<band height="20" splitType="Stretch">
 			<staticText>
 				<reportElement x="0" y="0" width="111" height="20" uuid="0ac760b9-a1b5-480a-976f-cda5bd154300"/>
+				<box leftPadding="2">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[No. KTP]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="111" y="0" width="111" height="20" uuid="134be002-2a80-47e8-a91e-d74ae701399f"/>
+				<box leftPadding="2">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[Nama]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="222" y="0" width="92" height="20" uuid="0573c7a4-0cbe-4214-87c4-2162e61be5b5"/>
+				<box leftPadding="2">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[Telepon]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="314" y="0" width="130" height="20" uuid="886d801c-37c6-4bdd-978b-c5b3f49c304f"/>
+				<box leftPadding="2">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[Alamat]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="444" y="0" width="111" height="20" uuid="f87e7716-1ae1-46d1-82be-7c721e7e937a"/>
+				<box leftPadding="2">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[Tugas]]></text>
 			</staticText>
 		</band>
@@ -74,22 +109,57 @@ FROM
 		<band height="20" splitType="Stretch">
 			<textField>
 				<reportElement x="0" y="0" width="111" height="20" uuid="958048aa-27da-49b6-88d6-f664b926e03a"/>
+				<box leftPadding="2">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{petugas_no_ktp}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="111" y="0" width="111" height="20" uuid="af89bf86-6ab2-45a1-b236-80b5704aeaf0"/>
+				<box leftPadding="2">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{petugas_nama}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="222" y="0" width="92" height="20" uuid="74ca3c9c-bbd7-473b-a604-94aef63582fe"/>
+				<box leftPadding="2">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{petugas_telp}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="314" y="0" width="130" height="20" uuid="58d76275-16d0-4e84-a8c7-e7d41c693519"/>
+				<box leftPadding="2">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{petugas_alamat}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="444" y="0" width="111" height="20" uuid="82186629-1992-41f8-bef6-6f1042a40c3b"/>
+				<box leftPadding="2">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{petugas_tugas}]]></textFieldExpression>
 			</textField>
 		</band>

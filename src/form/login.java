@@ -144,13 +144,15 @@ public class login extends javax.swing.JFrame {
 
     private void btnloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnloginActionPerformed
        // TODO add your handling code here:
-        String User="Admin";
-        String Pass="123456789";
+        String User="admin";
+        String Pass="admin123";
         String cUser= txtuser.getText();
         String cPass= String.valueOf(txtpass.getPassword());
        
         if ((cUser.compareTo(User)==0)&&(cPass.compareTo(Pass)==0)) {
             JOptionPane.showMessageDialog(null, "selamat anda berhasil masuk");
+            menuUtama mu = new menuUtama();
+            mu.show();
             this.dispose();
         }
         else {

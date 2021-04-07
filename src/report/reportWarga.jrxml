@@ -48,18 +48,46 @@ FROM
 		<band height="20" splitType="Stretch">
 			<staticText>
 				<reportElement x="0" y="0" width="138" height="20" uuid="cfaf44d4-0e19-4a72-8b65-f14ffdde5979"/>
+				<box leftPadding="2">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[No. Kartu Keluarga]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="138" y="0" width="138" height="20" uuid="20f6dcc9-a90b-4be7-9527-921615267953"/>
+				<box leftPadding="2">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[Nama Kepala Keluarga]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="276" y="0" width="119" height="20" uuid="ec3db6da-321e-418e-be11-9a153e80d140"/>
+				<box leftPadding="2">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[Telepon]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="395" y="0" width="157" height="20" uuid="be7e2995-c9d9-468b-adc5-c42760617fdc"/>
+				<box leftPadding="2">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[Alamat]]></text>
 			</staticText>
 		</band>
@@ -68,18 +96,46 @@ FROM
 		<band height="20" splitType="Stretch">
 			<textField>
 				<reportElement x="0" y="0" width="138" height="20" uuid="ec2b1e01-61f4-41c3-867a-a211c6c45520"/>
+				<box leftPadding="2">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{warga_no_kk}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="138" y="0" width="138" height="20" uuid="9124a81a-e307-4328-91d1-c829993d624d"/>
+				<box leftPadding="2">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{warga_nama_kk}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="276" y="0" width="119" height="20" uuid="6712262a-eafe-49a2-ac80-3cfead17e85e"/>
+				<box leftPadding="2">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{warga_telp}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="395" y="0" width="157" height="20" uuid="b7bde810-527c-40f8-a093-909b7c84b0f7"/>
+				<box leftPadding="2">
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{warga_alamat}]]></textFieldExpression>
 			</textField>
 		</band>

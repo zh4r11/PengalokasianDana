@@ -16,6 +16,7 @@ import java.sql.Statement;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
@@ -52,6 +53,24 @@ public class laporan extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jDialogKeamanan = new javax.swing.JDialog();
+        dcDarikea = new com.toedter.calendar.JDateChooser();
+        dcSampaikea = new com.toedter.calendar.JDateChooser();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        cetakkea = new javax.swing.JButton();
+        jDialogKebersihan = new javax.swing.JDialog();
+        dcDarikeb = new com.toedter.calendar.JDateChooser();
+        dcSampaikeb = new com.toedter.calendar.JDateChooser();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        cetakkeb = new javax.swing.JButton();
+        jDialogPembayaran = new javax.swing.JDialog();
+        dcDarib = new com.toedter.calendar.JDateChooser();
+        dcSampaib = new com.toedter.calendar.JDateChooser();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         bayarpetugas = new javax.swing.JButton();
         kebersihan = new javax.swing.JButton();
@@ -63,6 +82,150 @@ public class laporan extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jMenuBar2 = new javax.swing.JMenuBar();
+
+        jDialogKeamanan.setMinimumSize(new java.awt.Dimension(420, 140));
+
+        jLabel5.setText("Dari");
+
+        jLabel6.setText("Sampai");
+
+        cetakkea.setText("CETAK");
+        cetakkea.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cetakkeaActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jDialogKeamananLayout = new javax.swing.GroupLayout(jDialogKeamanan.getContentPane());
+        jDialogKeamanan.getContentPane().setLayout(jDialogKeamananLayout);
+        jDialogKeamananLayout.setHorizontalGroup(
+            jDialogKeamananLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialogKeamananLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jDialogKeamananLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(dcDarikea, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
+                .addGroup(jDialogKeamananLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(dcSampaikea, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6))
+                .addContainerGap())
+            .addGroup(jDialogKeamananLayout.createSequentialGroup()
+                .addGap(149, 149, 149)
+                .addComponent(cetakkea, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jDialogKeamananLayout.setVerticalGroup(
+            jDialogKeamananLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialogKeamananLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addGroup(jDialogKeamananLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel6))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jDialogKeamananLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(dcSampaikea, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dcDarikea, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(cetakkea)
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
+
+        jDialogKebersihan.setMinimumSize(new java.awt.Dimension(420, 140));
+
+        jLabel7.setText("Dari");
+
+        jLabel8.setText("Sampai");
+
+        cetakkeb.setText("CETAK");
+        cetakkeb.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cetakkebActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jDialogKebersihanLayout = new javax.swing.GroupLayout(jDialogKebersihan.getContentPane());
+        jDialogKebersihan.getContentPane().setLayout(jDialogKebersihanLayout);
+        jDialogKebersihanLayout.setHorizontalGroup(
+            jDialogKebersihanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialogKebersihanLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jDialogKebersihanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(dcDarikeb, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
+                .addGroup(jDialogKebersihanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(dcSampaikeb, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8))
+                .addContainerGap())
+            .addGroup(jDialogKebersihanLayout.createSequentialGroup()
+                .addGap(149, 149, 149)
+                .addComponent(cetakkeb, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jDialogKebersihanLayout.setVerticalGroup(
+            jDialogKebersihanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialogKebersihanLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addGroup(jDialogKebersihanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel8))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jDialogKebersihanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(dcSampaikeb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dcDarikeb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(cetakkeb)
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
+
+        jDialogPembayaran.setMinimumSize(new java.awt.Dimension(420, 140));
+
+        jLabel9.setText("Dari");
+
+        jLabel10.setText("Sampai");
+
+        jButton4.setText("CETAK");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jDialogPembayaranLayout = new javax.swing.GroupLayout(jDialogPembayaran.getContentPane());
+        jDialogPembayaran.getContentPane().setLayout(jDialogPembayaranLayout);
+        jDialogPembayaranLayout.setHorizontalGroup(
+            jDialogPembayaranLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialogPembayaranLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jDialogPembayaranLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(dcDarib, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
+                .addGroup(jDialogPembayaranLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(dcSampaib, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10))
+                .addContainerGap())
+            .addGroup(jDialogPembayaranLayout.createSequentialGroup()
+                .addGap(149, 149, 149)
+                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jDialogPembayaranLayout.setVerticalGroup(
+            jDialogPembayaranLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialogPembayaranLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addGroup(jDialogPembayaranLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel10))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jDialogPembayaranLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(dcSampaib, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dcDarib, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jButton4)
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -181,30 +344,14 @@ public class laporan extends javax.swing.JFrame {
 
     private void bayarpetugasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bayarpetugasActionPerformed
         // TODO add your handling code here:
-        try {
-//            HashMap hash = new HashMap();
-
-            InputStream is = getClass().getResourceAsStream("/report/reportBayarPetugas.jrxml");
-            JasperReport jasperReport = JasperCompileManager.compileReport(is);
-            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, conn);
-            JasperViewer.viewReport(jasperPrint, false);
-        }catch (JRException e) {
-            JOptionPane.showMessageDialog(null, "Error " + e);
-        }
+        jDialogPembayaran.setLocationRelativeTo(this);
+        jDialogPembayaran.setVisible(true);
     }//GEN-LAST:event_bayarpetugasActionPerformed
 
     private void kebersihanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kebersihanActionPerformed
         // TODO add your handling code here:
-        try {
-//            HashMap hash = new HashMap();
-
-            InputStream is = getClass().getResourceAsStream("/report/reportKebersihan.jrxml");
-            JasperReport jasperReport = JasperCompileManager.compileReport(is);
-            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, conn);
-            JasperViewer.viewReport(jasperPrint, false);
-        }catch (JRException e) {
-            JOptionPane.showMessageDialog(null, "Error " + e);
-        }
+        jDialogKebersihan.setLocationRelativeTo(this);
+        jDialogKebersihan.setVisible(true);
     }//GEN-LAST:event_kebersihanActionPerformed
 
     private void wargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_wargaActionPerformed
@@ -237,16 +384,8 @@ public class laporan extends javax.swing.JFrame {
 
     private void keamananActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_keamananActionPerformed
         // TODO add your handling code here:
-        try {
-//            HashMap hash = new HashMap();
-
-            InputStream is = getClass().getResourceAsStream("/report/reportKeamanan.jrxml");
-            JasperReport jasperReport = JasperCompileManager.compileReport(is);
-            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, conn);
-            JasperViewer.viewReport(jasperPrint, false);
-        }catch (JRException e) {
-            JOptionPane.showMessageDialog(null, "Error " + e);
-        }
+        jDialogKeamanan.setLocationRelativeTo(this);
+        jDialogKeamanan.setVisible(true);
     }//GEN-LAST:event_keamananActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -255,6 +394,66 @@ public class laporan extends javax.swing.JFrame {
         mu.show();
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void cetakkeaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cetakkeaActionPerformed
+        // TODO add your handling code here:
+        SimpleDateFormat date = new SimpleDateFormat ("yyyy-MM-dd");
+        String dari = date.format(dcDarikea.getDate());
+        String sampai = date.format(dcSampaikea.getDate());
+        try {
+            HashMap hash = new HashMap();
+            hash.put("dari", dari);
+            hash.put("sampai", sampai);
+
+            InputStream is = getClass().getResourceAsStream("/report/reportKeamanan.jrxml");
+            JasperReport jasperReport = JasperCompileManager.compileReport(is);
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, hash, conn);
+            JasperViewer.viewReport(jasperPrint, false);
+            jDialogKeamanan.dispose();
+        }catch (JRException e) {
+            JOptionPane.showMessageDialog(null, "Error " + e);
+        }
+    }//GEN-LAST:event_cetakkeaActionPerformed
+
+    private void cetakkebActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cetakkebActionPerformed
+        // TODO add your handling code here:
+        SimpleDateFormat date = new SimpleDateFormat ("yyyy-MM-dd");
+        String dari = date.format(dcDarikeb.getDate());
+        String sampai = date.format(dcSampaikeb.getDate());
+        try {
+            HashMap hash = new HashMap();
+            hash.put("dari", dari);
+            hash.put("sampai", sampai);
+
+            InputStream is = getClass().getResourceAsStream("/report/reportKebersihan.jrxml");
+            JasperReport jasperReport = JasperCompileManager.compileReport(is);
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, hash, conn);
+            JasperViewer.viewReport(jasperPrint, false);
+            jDialogKebersihan.dispose();
+        }catch (JRException e) {
+            JOptionPane.showMessageDialog(null, "Error " + e);
+        }
+    }//GEN-LAST:event_cetakkebActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        SimpleDateFormat date = new SimpleDateFormat ("yyyy-MM-dd");
+        String dari = date.format(dcDarib.getDate());
+        String sampai = date.format(dcSampaib.getDate());
+        try {
+            HashMap hash = new HashMap();
+            hash.put("dari", dari);
+            hash.put("sampai", sampai);
+
+            InputStream is = getClass().getResourceAsStream("/report/reportBayarPetugas.jrxml");
+            JasperReport jasperReport = JasperCompileManager.compileReport(is);
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, hash, conn);
+            JasperViewer.viewReport(jasperPrint, false);
+            jDialogPembayaran.dispose();
+        }catch (JRException e) {
+            JOptionPane.showMessageDialog(null, "Error " + e);
+        }
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -308,11 +507,29 @@ public class laporan extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bayarpetugas;
+    private javax.swing.JButton cetakkea;
+    private javax.swing.JButton cetakkeb;
+    private com.toedter.calendar.JDateChooser dcDarib;
+    private com.toedter.calendar.JDateChooser dcDarikea;
+    private com.toedter.calendar.JDateChooser dcDarikeb;
+    private com.toedter.calendar.JDateChooser dcSampaib;
+    private com.toedter.calendar.JDateChooser dcSampaikea;
+    private com.toedter.calendar.JDateChooser dcSampaikeb;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JDialog jDialogKeamanan;
+    private javax.swing.JDialog jDialogKebersihan;
+    private javax.swing.JDialog jDialogPembayaran;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JButton keamanan;
     private javax.swing.JButton kebersihan;
